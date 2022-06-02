@@ -1,10 +1,11 @@
+//time functions
 var day = new Date();
 document.getElementById("currentDay").innerHTML = moment().format('LLL');
 
 
 
 
-
+//storage and retrieval
 var tasks = JSON.parse(localStorage.getItem("tasks")) || {};
 
 var saveTasks = function(timeString, todoText){
@@ -17,13 +18,11 @@ var saveTasks = function(timeString, todoText){
 //load tasks into the planner
 var loadTasks = function() {
     $(".todo").each(function(index, todoDiv){
+      //if there is a text entry for id then set p with text
       
-      //check the saved tasks for a entry for id
       if (todoDiv.id in tasks) {
         todoDiv.firstElementChild.innerHTML = tasks[todoDiv.id];
-      }
-      
-      //if there is a text entry for id then set p with text
+      }   
     })
     
 };
@@ -69,7 +68,7 @@ $(".todo").on("blur", "textarea", function() {
 });
 
 
-
+//color changing function
 var colorCode = function(){
   
     var currentHour = moment().format("H");
@@ -85,10 +84,11 @@ var colorCode = function(){
       else{
         $(this).addClass("present")
       }
-    })
-      
+    })  
 };
 
+//keep track of the color changer
 setInterval(colorCode, 5000);
 
+//Sets initial color.
 colorCode();
