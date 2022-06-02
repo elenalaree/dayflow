@@ -69,7 +69,9 @@ $(".todo").on("blur", "textarea", function() {
 });
 
 
+
 var colorCode = function(){
+  
     var currentHour = moment().format("H");
 
     $(".todo").each(function(){
@@ -86,4 +88,7 @@ var colorCode = function(){
     })
       
 };
+
+setInterval(colorCode, 5000);
+
 colorCode();
