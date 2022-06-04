@@ -10,7 +10,7 @@ var tasks = JSON.parse(localStorage.getItem("tasks")) || {};
 
 var saveTasks = function(timeString, todoText){
     tasks[timeString] = todoText;
-     localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
 
@@ -42,7 +42,7 @@ $(".todo").on("click", "p", function() {
     
     $(this).replaceWith(textInput);
     textInput.trigger("focus");
-     
+    
 });
 
 //Save when clicking off text area
